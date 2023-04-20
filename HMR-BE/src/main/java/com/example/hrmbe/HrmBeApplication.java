@@ -1,13 +1,13 @@
-package com.example.hmrbe;
+package com.example.hrmbe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HmrBeApplication {
+public class HrmBeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HmrBeApplication.class, args);
+		SpringApplication.run(HrmBeApplication.class, args);
 	}
 
 }
