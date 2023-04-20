@@ -10,7 +10,9 @@ public enum ErrorMessageEnum {
 
     TOKEN_INVALID("001003", "Token Invalid"),
 
-    CREATE_TOKEN_FAILED("001004", "Create Token Failed");
+    CREATE_TOKEN_FAILED("001004", "Create Token Failed"),
+
+    LACK_OF_INFORMATION("001005", "Lack Of Information");
 
     private String code;
 

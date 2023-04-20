@@ -29,7 +29,7 @@ public class User extends BaseEntity {
     private Date dob;
 
     @Column(name = "phone_number")
-    private Date phoneNumber;
+    private String phoneNumber;
 
     @Column(name = "roles")
     private String roles;

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.nio.CharBuffer;
+import java.util.Arrays;
 
 @Service
 public class AuthServiceImpl implements AuthService {
@@ -37,5 +38,20 @@ public class AuthServiceImpl implements AuthService {
             return userRepo.findByEmail(email);
         }
         throw new RuntimeException(ErrorMessageEnum.TOKEN_INVALID.getCode());
+    }
+
+    @Override
+    public User save(User user) {
+        if (Arrays.asList(user.getFullName(),
+                user.getEmail(),
+                user.getPassword(),
+                user.getPhoneNumber(),
+                user.getRoles()).stream().anyMatch(StringUtils::hasText)
+                && user.getGender() != null
+                && user.getDob() != null) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            userRepo.save(user);
+        }
+        throw new RuntimeException(ErrorMessageEnum.LACK_OF_INFORMATION.getCode());
     }
 }

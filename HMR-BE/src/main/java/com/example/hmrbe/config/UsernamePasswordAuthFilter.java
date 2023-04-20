@@ -28,7 +28,7 @@ public class UsernamePasswordAuthFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         if (Constants.SIGN_IN_API.equals(request.getServletPath())
-            && HttpMethod.POST.matches(request.getMethod())) {
+                && HttpMethod.POST.matches(request.getMethod())) {
             try {
                 User user = objectMapper.readValue(request.getInputStream(), User.class);
                 SecurityContextHolder.getContext().setAuthentication(userAuthProvider.validateUser(user));

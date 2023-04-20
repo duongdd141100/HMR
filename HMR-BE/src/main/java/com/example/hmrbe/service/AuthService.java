@@ -6,4 +6,6 @@ public interface AuthService {
     User validateUser(User user);
 
     User findByEmail(String email);
+
+    User save(User user);
 }
