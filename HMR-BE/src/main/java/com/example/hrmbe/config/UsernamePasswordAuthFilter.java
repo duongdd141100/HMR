@@ -1,8 +1,8 @@
-package com.example.hmrbe.config;
+package com.example.hrmbe.config;
 
-import com.example.hmrbe.common.ErrorMessageEnum;
-import com.example.hmrbe.constants.Constants;
-import com.example.hmrbe.entity.User;
+import com.example.hrmbe.common.ErrorMessageEnum;
+import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

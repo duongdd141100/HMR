@@ -1,6 +1,6 @@
-package com.example.hmrbe.config;
+package com.example.hrmbe.config;
 
-import com.example.hmrbe.constants.Constants;
+import com.example.hrmbe.constants.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

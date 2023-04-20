@@ -1,4 +1,4 @@
-package com.example.hmrbe.entity;
+package com.example.hrmbe.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

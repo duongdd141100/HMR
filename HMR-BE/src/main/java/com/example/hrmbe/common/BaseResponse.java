@@ -1,4 +1,4 @@
-package com.example.hmrbe.common;
+package com.example.hrmbe.common;
 
 import lombok.Data;
 import lombok.Setter;

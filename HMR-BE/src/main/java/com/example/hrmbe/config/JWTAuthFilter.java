@@ -1,7 +1,7 @@
-package com.example.hmrbe.config;
+package com.example.hrmbe.config;
 
-import com.example.hmrbe.common.ErrorMessageEnum;
-import com.example.hmrbe.constants.Constants;
+import com.example.hrmbe.common.ErrorMessageEnum;
+import com.example.hrmbe.constants.Constants;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

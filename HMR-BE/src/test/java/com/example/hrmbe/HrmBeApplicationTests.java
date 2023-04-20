@@ -1,10 +1,10 @@
-package com.example.hmrbe;
+package com.example.hrmbe;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HmrBeApplicationTests {
+class HrmBeApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,6 +1,6 @@
-package com.example.hmrbe.service;
+package com.example.hrmbe.service;
 
-import com.example.hmrbe.entity.User;
+import com.example.hrmbe.entity.User;
 
 public interface AuthService {
     User validateUser(User user);

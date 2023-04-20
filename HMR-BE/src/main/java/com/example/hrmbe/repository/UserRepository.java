@@ -1,6 +1,6 @@
-package com.example.hmrbe.repository;
+package com.example.hrmbe.repository;
 
-import com.example.hmrbe.entity.User;
+import com.example.hrmbe.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

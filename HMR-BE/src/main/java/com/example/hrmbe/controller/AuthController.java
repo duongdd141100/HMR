@@ -1,9 +1,9 @@
-package com.example.hmrbe.controller;
+package com.example.hrmbe.controller;
 
-import com.example.hmrbe.common.BaseResponse;
-import com.example.hmrbe.constants.Constants;
-import com.example.hmrbe.entity.User;
-import com.example.hmrbe.service.AuthService;
+import com.example.hrmbe.common.BaseResponse;
+import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.entity.User;
+import com.example.hrmbe.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.example.hmrbe.config;
+package com.example.hrmbe.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

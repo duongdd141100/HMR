@@ -1,4 +1,4 @@
-package com.example.hmrbe.constants;
+package com.example.hrmbe.constants;
 
 public class Constants {
 

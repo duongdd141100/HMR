@@ -1,9 +1,9 @@
-package com.example.hmrbe.service.impl;
+package com.example.hrmbe.service.impl;
 
-import com.example.hmrbe.common.ErrorMessageEnum;
-import com.example.hmrbe.entity.User;
-import com.example.hmrbe.repository.UserRepository;
-import com.example.hmrbe.service.AuthService;
+import com.example.hrmbe.common.ErrorMessageEnum;
+import com.example.hrmbe.entity.User;
+import com.example.hrmbe.repository.UserRepository;
+import com.example.hrmbe.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
