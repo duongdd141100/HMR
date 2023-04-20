@@ -46,11 +46,11 @@ public class AuthServiceImpl implements AuthService {
                 user.getEmail(),
                 user.getPassword(),
                 user.getPhoneNumber(),
-                user.getRoles()).stream().anyMatch(StringUtils::hasText)
+                user.getRoles()).stream().allMatch(StringUtils::hasText)
                 && user.getGender() != null
                 && user.getDob() != null) {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
-            userRepo.save(user);
+            return userRepo.save(user);
         }
         throw new RuntimeException(ErrorMessageEnum.LACK_OF_INFORMATION.getCode());
     }
