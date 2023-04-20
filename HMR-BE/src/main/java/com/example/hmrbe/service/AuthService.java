@@ -4,4 +4,6 @@ import com.example.hmrbe.entity.User;
 
 public interface AuthService {
     User validateUser(User user);
+
+    User findByEmail(String email);
 }

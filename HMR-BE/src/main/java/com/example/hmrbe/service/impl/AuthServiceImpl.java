@@ -1,5 +1,6 @@
 package com.example.hmrbe.service.impl;
 
+import com.example.hmrbe.common.ErrorMessageEnum;
 import com.example.hmrbe.entity.User;
 import com.example.hmrbe.repository.UserRepository;
 import com.example.hmrbe.service.AuthService;
@@ -27,6 +28,14 @@ public class AuthServiceImpl implements AuthService {
                 return realUser;
             }
         }
-        throw new RuntimeException("User Not Valid!");
+        throw new RuntimeException(ErrorMessageEnum.LOGIN_FAILED.getCode());
+    }
+
+    @Override
+    public User findByEmail(String email) {
+        if (StringUtils.hasText(email)) {
+            return userRepo.findByEmail(email);
+        }
+        throw new RuntimeException(ErrorMessageEnum.TOKEN_INVALID.getCode());
     }
 }
