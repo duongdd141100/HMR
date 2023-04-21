@@ -27,7 +27,7 @@ public class JWTAuthFilter extends OncePerRequestFilter {
         String token = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (StringUtils.hasText(token)) {
             try {
-                SecurityContextHolder.getContext().setAuthentication(userAuthProvider.validateToken(token));
+                SecurityContextHolder.getContext().setAuthentication(userAuthProvider.validateToken(token.split(" ")[1]));
             } catch (Exception e) {
                 throw new RuntimeException(ErrorMessageEnum.TOKEN_INVALID.getCode());
             }

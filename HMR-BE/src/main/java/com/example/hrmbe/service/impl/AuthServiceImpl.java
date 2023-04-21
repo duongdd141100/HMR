@@ -1,6 +1,8 @@
 package com.example.hrmbe.service.impl;
 
+import com.example.hrmbe.common.Converter;
 import com.example.hrmbe.common.ErrorMessageEnum;
+import com.example.hrmbe.constants.Constants;
 import com.example.hrmbe.entity.User;
 import com.example.hrmbe.repository.UserRepository;
 import com.example.hrmbe.service.AuthService;
@@ -11,6 +13,8 @@ import org.springframework.util.StringUtils;
 
 import java.nio.CharBuffer;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class AuthServiceImpl implements AuthService {
@@ -43,12 +47,25 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public User save(User user) {
         if (Arrays.asList(user.getFullName(),
-                user.getEmail(),
                 user.getPassword(),
                 user.getPhoneNumber(),
                 user.getRoles()).stream().allMatch(StringUtils::hasText)
                 && user.getGender() != null
                 && user.getDob() != null) {
+            List<String> names = Arrays.asList(Converter.removeAccent(user.getFullName().trim().toLowerCase()).split(" "));
+            StringBuilder username = new StringBuilder(names.get(names.size() - 1));
+            for (int i = 0; i < names.size() - 1; i++) {
+                username.append(names.get(i).charAt(0));
+            }
+            boolean isExist = true;
+            while (isExist) {
+                Random random = new Random();
+                String email = username.toString() + random.nextInt(100) + Constants.PREFIX;
+                isExist = userRepo.findByEmail(email) != null;
+                if (!isExist) {
+                    user.setEmail(email);
+                }
+            }
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             return userRepo.save(user);
         }
