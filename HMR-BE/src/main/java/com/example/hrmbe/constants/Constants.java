@@ -10,4 +10,6 @@ public class Constants {
 
     public static final String SIGN_OUT_API = "/api/auth/sign-out";
 
+    public static final String PREFIX = "@idiot.com.vn";
+
 }
