@@ -13,7 +13,7 @@ const components = {
     
 }
 
-export default function() {
+export default function Routers() {
     const [token, setToken] = useState('');
     const [header, setHeader] = useState([]);
     
@@ -36,7 +36,7 @@ export default function() {
             <Routes>
                 {header.map(item => {
                     console.log(item)
-                    return <Route key={item.slug} path={item.slug} element={<Home/>} />
+                    return <Route key={item.slug} path={item.slug} element={components[item.slug]} />
                 })}
             </Routes>
         </MainLayout>
