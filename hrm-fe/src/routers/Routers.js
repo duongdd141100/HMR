@@ -10,13 +10,12 @@ import MainLayout from "../layouts/MainLayout";
 const components = {
     "/home": <Home />,
     "/logout": <SignOut />
-    
 }
 
 export default function Routers() {
     const [token, setToken] = useState('');
     const [header, setHeader] = useState([]);
-    
+
     useEffect(() => {
         if (Object.keys(token).length !== 0 || (localStorage.getItem('token') && localStorage.getItem('token').length !== 0)) {
             Services.get(Constants.api.auth.me, (data) => console.log('Hello ' + data.body.fullName), (data) => {
@@ -27,18 +26,24 @@ export default function Routers() {
             })
         }
     }, [token]);
-    if (Object.keys(token).length === 0 && (!localStorage.getItem('token') && localStorage.getItem('token').length === 0)) {
+
+    if (Object.keys(token).length === 0 && (!localStorage.getItem('token') && localStorage.getItem('token')?.length === 0)) {
         return <SignIn setToken={(token) => setToken(token)} />
     }
-    
+
     return (
-        <MainLayout header={header}>
-            <Routes>
-                {header.map(item => {
-                    console.log(item)
-                    return <Route key={item.slug} path={item.slug} element={components[item.slug]} />
-                })}
-            </Routes>
-        </MainLayout>
+        <Routes>
+            {header.map(item => (
+                <Route
+                    key={item.slug}
+                    path={item.slug}
+                    element={(
+                        <MainLayout header={header}>
+                            {components[item.slug]}
+                        </MainLayout>
+                    )}
+                />
+            ))}
+        </Routes>
     )
 }
