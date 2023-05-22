@@ -32,18 +32,23 @@ export default function Routers() {
     }
 
     return (
+        <MainLayout header={header}>
         <Routes>
-            {header.map(item => (
+            {header.map(item => { 
+                return (
                 <Route
                     key={item.slug}
                     path={item.slug}
                     element={(
-                        <MainLayout header={header}>
-                            {components[item.slug]}
-                        </MainLayout>
+                        
+                            components[item.slug]
+                        
                     )}
                 />
-            ))}
+            )})}
         </Routes>
+        </MainLayout>
+
+
     )
 }
