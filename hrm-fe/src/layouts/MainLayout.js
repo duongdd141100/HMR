@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import '../css/Common.css'
+import '../css/Header.css'
 
 function logout() {
     localStorage.setItem("token", "");

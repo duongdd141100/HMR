@@ -20,3 +20,18 @@ input {
 label {
     font-size: 16px;
 }
+
+a {
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    padding: inherit;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+    color: rgb(55, 53, 47) !important;
+}
+
+a:hover {
+    background-color: #f2f2f2;
+}
