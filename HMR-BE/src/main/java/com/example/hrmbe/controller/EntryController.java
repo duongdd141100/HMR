@@ -3,6 +3,7 @@ package com.example.hrmbe.controller;
 import com.example.hrmbe.common.BaseResponse;
 import com.example.hrmbe.common.ErrorMessageEnum;
 import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.constants.RequestMappingConstant;
 import com.example.hrmbe.dto.EntryDto;
 import com.example.hrmbe.service.EntryService;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +28,7 @@ public class EntryController {
         try {
             return ResponseEntity.ok(BaseResponse.ok(entryService.getHeader()));
         } catch (Exception e) {
-            log.error(Constants.SIGN_UP_API + e);
+            log.error(RequestMappingConstant.SIGN_UP_API + e);
             return ResponseEntity.badRequest().body(BaseResponse.fail(ErrorMessageEnum.typeOf(e.getMessage()).getMessage()));
         }
     }

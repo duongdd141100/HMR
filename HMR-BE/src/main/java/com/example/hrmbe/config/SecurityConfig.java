@@ -1,6 +1,7 @@
 package com.example.hrmbe.config;
 
 import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.constants.RequestMappingConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,7 +35,7 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests(request -> {
-                    request.requestMatchers(HttpMethod.POST, Constants.SIGN_IN_API, Constants.SIGN_UP_API, Constants.SIGN_OUT_API).permitAll()
+                    request.requestMatchers(HttpMethod.POST, RequestMappingConstant.SIGN_IN_API, RequestMappingConstant.SIGN_UP_API, RequestMappingConstant.SIGN_OUT_API).permitAll()
                             .anyRequest().authenticated();
                 });
         return http.build();

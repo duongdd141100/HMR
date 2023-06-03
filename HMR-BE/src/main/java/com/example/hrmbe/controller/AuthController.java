@@ -4,6 +4,7 @@ import com.example.hrmbe.common.BaseResponse;
 import com.example.hrmbe.common.ErrorMessageEnum;
 import com.example.hrmbe.config.UserAuthProvider;
 import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.constants.RequestMappingConstant;
 import com.example.hrmbe.entity.User;
 import com.example.hrmbe.service.AuthService;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +30,7 @@ public class AuthController {
         try {
             return ResponseEntity.ok(BaseResponse.ok(authService.save(user)));
         } catch (Exception e) {
-            log.error(Constants.SIGN_UP_API + e);
+            log.error(RequestMappingConstant.SIGN_UP_API + e);
             return ResponseEntity.badRequest().body(BaseResponse.fail(ErrorMessageEnum.typeOf(e.getMessage()).getMessage()));
         }
     }
@@ -39,7 +40,7 @@ public class AuthController {
         try {
             return ResponseEntity.ok(BaseResponse.ok(userAuthProvider.createToken(user.getEmail())));
         } catch (Exception e) {
-            log.error(Constants.SIGN_IN_API + e);
+            log.error(RequestMappingConstant.SIGN_IN_API + e);
             return ResponseEntity.badRequest().body(BaseResponse.fail(ErrorMessageEnum.typeOf(e.getMessage()).getMessage()));
         }
     }
