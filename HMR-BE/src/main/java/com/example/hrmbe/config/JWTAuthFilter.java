@@ -2,6 +2,7 @@ package com.example.hrmbe.config;
 
 import com.example.hrmbe.common.ErrorMessageEnum;
 import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.constants.RequestMappingConstant;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -32,7 +33,7 @@ public class JWTAuthFilter extends OncePerRequestFilter {
                 throw new RuntimeException(ErrorMessageEnum.TOKEN_INVALID.getCode());
             }
         } else {
-            if (!Arrays.asList(Constants.SIGN_IN_API, Constants.SIGN_UP_API, Constants.SIGN_OUT_API).contains(request.getServletPath())) {
+            if (!Arrays.asList(RequestMappingConstant.SIGN_IN_API, RequestMappingConstant.SIGN_UP_API, RequestMappingConstant.SIGN_OUT_API).contains(request.getServletPath())) {
                 throw new RuntimeException(ErrorMessageEnum.TOKEN_INVALID.getCode());
             }
         }

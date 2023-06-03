@@ -2,6 +2,7 @@ package com.example.hrmbe.config;
 
 import com.example.hrmbe.common.ErrorMessageEnum;
 import com.example.hrmbe.constants.Constants;
+import com.example.hrmbe.constants.RequestMappingConstant;
 import com.example.hrmbe.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
@@ -27,7 +28,7 @@ public class UsernamePasswordAuthFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        if (Constants.SIGN_IN_API.equals(request.getServletPath())
+        if (RequestMappingConstant.SIGN_IN_API.equals(request.getServletPath())
                 && HttpMethod.POST.matches(request.getMethod())) {
             try {
                 User user = objectMapper.readValue(request.getInputStream(), User.class);
