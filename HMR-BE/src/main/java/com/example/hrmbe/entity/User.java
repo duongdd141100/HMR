@@ -1,9 +1,7 @@
 package com.example.hrmbe.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -11,6 +9,20 @@ import java.util.Date;
 @Entity
 @Table(name = "tbl_user")
 @Data
+
+@SqlResultSetMapping(
+        name = "EmployeeDtoResult",
+        classes = @ConstructorResult(
+                targetClass = com.example.hrmbe.dto.EmployeeDto.class,
+                columns = {
+                        @ColumnResult(name = "fullName", type = String.class),
+                        @ColumnResult(name = "email", type = String.class),
+                        @ColumnResult(name = "gender", type = Boolean.class),
+                        @ColumnResult(name = "dob", type = Date.class),
+                        @ColumnResult(name = "phoneNumber", type = String.class),
+                }
+        )
+)
 public class User extends BaseEntity {
 
     @Column(name = "full_name")
