@@ -37,6 +37,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(request -> {
                     request.requestMatchers(HttpMethod.POST, RequestMappingConstant.SIGN_IN_API, RequestMappingConstant.SIGN_UP_API, RequestMappingConstant.SIGN_OUT_API).permitAll()
                             .anyRequest().authenticated();
+                    request.requestMatchers(HttpMethod.GET, RequestMappingConstant.ME_API).permitAll()
+                            .anyRequest().authenticated();
+
                 });
         return http.build();
     }
