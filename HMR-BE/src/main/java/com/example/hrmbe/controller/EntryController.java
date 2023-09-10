@@ -2,7 +2,6 @@ package com.example.hrmbe.controller;
 
 import com.example.hrmbe.common.BaseResponse;
 import com.example.hrmbe.common.ErrorMessageEnum;
-import com.example.hrmbe.constants.Constants;
 import com.example.hrmbe.constants.RequestMappingConstant;
 import com.example.hrmbe.dto.EntryDto;
 import com.example.hrmbe.service.EntryService;
